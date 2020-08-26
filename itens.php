@@ -1,5 +1,6 @@
 <?php
 
+use Alura\DesignPattern\CacheOrcamnetoProxy;
 use Alura\DesignPattern\ItemOrcamento;
 use Alura\DesignPattern\Orcamento;
 
@@ -21,4 +22,12 @@ $orcamentoAntigo->addItem($item3);
 
 $orcamento->addItem($orcamentoAntigo);
 
-echo $orcamento->valor() . PHP_EOL;
+$proxyCache = new CacheOrcamnetoProxy($orcamento);
+
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
